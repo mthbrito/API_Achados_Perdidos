@@ -2,7 +2,6 @@ package br.edu.ifpb.api_achados_perdidos.service;
 
 import br.edu.ifpb.api_achados_perdidos.dto.UploadResponse;
 import br.edu.ifpb.api_achados_perdidos.exception.ArquivoInvalidoException;
-import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

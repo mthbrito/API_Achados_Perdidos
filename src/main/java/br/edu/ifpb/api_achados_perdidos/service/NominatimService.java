@@ -4,11 +4,11 @@ import br.edu.ifpb.api_achados_perdidos.dto.GeocodeResponse;
 import br.edu.ifpb.api_achados_perdidos.exception.RecursoNaoEncontradoException;
 import br.edu.ifpb.api_achados_perdidos.exception.ServicoExternoException;
 import br.edu.ifpb.api_achados_perdidos.mapper.GeocodeMapper;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
+import tools.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
 import java.util.List;
