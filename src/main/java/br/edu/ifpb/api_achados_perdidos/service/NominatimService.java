@@ -16,11 +16,15 @@ import java.util.List;
 @Service
 public class NominatimService {
 
-    private final RestClient client = RestClient.builder()
-            .baseUrl("https://nominatim.openstreetmap.org")
-            .defaultHeader(HttpHeaders.USER_AGENT,
-                    "AchadosPerdidosApp/1.0 (trabalho academico IFPB)")
-            .build();
+    private final RestClient client;
+
+    public NominatimService() {
+        this.client = RestClient.builder()
+                .baseUrl("https://nominatim.openstreetmap.org")
+                .defaultHeader(HttpHeaders.USER_AGENT,
+                        "AchadosPerdidosApp/1.0 (trabalho academico IFPB)")
+                .build();
+    }
 
     public List<GeocodeResponse> buscarPorEndereco(String q) {
         JsonNode json = consultar(u -> u.path("/search")

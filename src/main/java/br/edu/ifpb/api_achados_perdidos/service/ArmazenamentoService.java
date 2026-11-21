@@ -25,16 +25,16 @@ public class ArmazenamentoService {
             "image/webp", ".webp"
     );
 
-    @Value("${app.upload-dir:uploads}")
-    private String diretorio;
-
     @Getter
-    private Path pasta;
+    private final Path pasta;
 
-    @PostConstruct
-    void iniciar() throws IOException {
-        pasta = Path.of(diretorio).toAbsolutePath().normalize();
-        Files.createDirectories(pasta);
+    public ArmazenamentoService(@Value("${app.upload-dir:uploads}") String diretorio) {
+        this.pasta = Path.of(diretorio).toAbsolutePath().normalize();
+        try {
+            Files.createDirectories(pasta);
+        } catch (IOException e) {
+            throw new UncheckedIOException("Não foi possível criar a pasta de upload", e);
+        }
     }
 
     public UploadResponse salvar(MultipartFile arquivo) {
