@@ -1,4 +1,3 @@
 package br.edu.ifpb.api_achados_perdidos.dto;
 
-public record UploadResponse() {
-}
+public record UploadResponse(String url) {}
